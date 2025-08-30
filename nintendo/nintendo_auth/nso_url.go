@@ -8,7 +8,6 @@ import (
 )
 
 func GenerateLoginUrl() (string, string, error) {
-
 	verifier, challenge, err := utils.GeneratePKCE()
 	if err != nil {
 		return "", "", err

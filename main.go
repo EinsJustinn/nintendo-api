@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"nintendo-api/nintendo/nintendo_auth"
+	"nintendo-api/nintendo/auth"
 )
 
 func main() {
-	url, s, err := nintendo_auth.GenerateLoginUrl()
+	url, s, err := auth.GenerateLoginUrl()
 	if err != nil {
 		panic(err)
 	}

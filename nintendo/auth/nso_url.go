@@ -1,4 +1,4 @@
-package nintendo_auth
+package auth
 
 import (
 	"fmt"

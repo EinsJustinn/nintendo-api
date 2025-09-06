@@ -2,9 +2,9 @@ package auth
 
 import (
 	"bytes"
+	"github.com/einsjustinn/nintendo-api/utils"
 	"net/http"
 	"net/url"
-	"nintendo-api/utils"
 )
 
 const (

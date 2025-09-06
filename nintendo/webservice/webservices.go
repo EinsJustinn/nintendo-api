@@ -3,9 +3,9 @@ package webservice
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/einsjustinn/nintendo-api/nxapi"
 	"io"
 	"net/http"
-	"nintendo-api/nxapi"
 )
 
 const (

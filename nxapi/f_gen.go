@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/einsjustinn/nintendo-api/utils"
 	"net/http"
 	"net/url"
-	"nintendo-api/utils"
 	"strconv"
 )
 

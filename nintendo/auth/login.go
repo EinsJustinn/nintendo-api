@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/einsjustinn/nintendo-api/nintendo"
+	"github.com/einsjustinn/nintendo-api/nxapi"
+	"github.com/einsjustinn/nintendo-api/utils"
 	"net/http"
-	"nintendo-api/nintendo"
-	"nintendo-api/nxapi"
-	"nintendo-api/utils"
 )
 
 const nintendoBaseUrl = "https://api-lp1.znc.srv.nintendo.net"

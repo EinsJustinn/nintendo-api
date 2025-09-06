@@ -1,4 +1,4 @@
-module nintendo-api
+module github.com/einsjustinn/nintendo-api
 
 go 1.24
 

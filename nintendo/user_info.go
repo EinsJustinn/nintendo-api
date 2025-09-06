@@ -1,8 +1,8 @@
 package nintendo
 
 import (
+	"github.com/einsjustinn/nintendo-api/utils"
 	"net/http"
-	"nintendo-api/utils"
 )
 
 const (

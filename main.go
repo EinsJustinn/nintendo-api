@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"nintendo-api/nintendo/auth"
+	"github.com/einsjustinn/nintendo-api/nintendo/auth"
 )
 
 func main() {

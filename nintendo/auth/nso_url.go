@@ -2,7 +2,7 @@ package auth
 
 import (
 	"fmt"
-	"nintendo-api/utils"
+	"github.com/einsjustinn/nintendo-api/utils"
 
 	"github.com/google/go-querystring/query"
 )

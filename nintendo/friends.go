@@ -2,9 +2,9 @@ package nintendo
 
 import (
 	"fmt"
+	"github.com/einsjustinn/nintendo-api/nxapi"
+	"github.com/einsjustinn/nintendo-api/utils"
 	"net/http"
-	"nintendo-api/nxapi"
-	"nintendo-api/utils"
 )
 
 func GetFriendList(webServiceAccessToken string) (*FriendListResponse, error) {

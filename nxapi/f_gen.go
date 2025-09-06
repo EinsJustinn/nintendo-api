@@ -17,7 +17,7 @@ const (
 	nxApiClientID    = "yfMwOli6yTynugoi3L_7mA"
 	nxApiGrantType   = "client_credentials"
 	nxApiScope       = "ca:gf"
-	userAgent        = "auth-test/1.0.0 (+https://github.com/einsjustinn)"
+	userAgent        = "nintendo-api/1.0.0 (+https://github.com/einsjustinn/nintendo-api)"
 )
 
 func GetNxApiToken() (*TokenResponse, error) {
@@ -32,7 +32,7 @@ func GetNxApiToken() (*TokenResponse, error) {
 		return nil, fmt.Errorf("failed to create request: %w", err)
 	}
 	request.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	request.Header.Set("User-Agent", "auth-test/1.0.0 (+https://github.com/einsjustinn)")
+	request.Header.Set("User-Agent", userAgent)
 	return utils.DoReq[TokenResponse](request)
 }
 

@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"net/http"
+
 	"github.com/einsjustinn/nintendo-api/nxapi"
 	"github.com/einsjustinn/nintendo-api/utils"
-	"net/http"
 )
 
 func GetWebServiceToken(webServiceId int64, fGenerationResponse nxapi.FGenerationResponse, accessToken string) (*GetWebServiceTokenResponse, error) {

@@ -3,8 +3,9 @@ package auth
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/einsjustinn/nintendo-api/utils"
 	"net/http"
+
+	"github.com/einsjustinn/nintendo-api/utils"
 )
 
 func GetToken(sessionToken string) (*TokenResponse, error) {

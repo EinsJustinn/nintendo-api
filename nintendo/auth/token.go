@@ -8,9 +8,9 @@ import (
 	"github.com/einsjustinn/nintendo-api/utils"
 )
 
-func GetToken(sessionToken string) (*TokenResponse, error) {
+func GetToken(sessionToken string, client Client) (*TokenResponse, error) {
 	tokenRequestJson, err := json.Marshal(tokenRequest{
-		ClientId:     nintendoClientId,
+		ClientId:     client.ID,
 		SessionToken: sessionToken,
 		GrantType:    nintendoGrandType,
 	})

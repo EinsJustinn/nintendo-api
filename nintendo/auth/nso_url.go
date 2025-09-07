@@ -8,7 +8,22 @@ import (
 	"github.com/google/go-querystring/query"
 )
 
-func GenerateLoginUrl() (string, string, error) {
+/*
+Client IDs
+Nintendo Switch Online App: 71b963c1b7b6d119
+Nintendo Music App: a9b03ca3519e14f4
+*/
+
+type Client struct {
+	ID string
+}
+
+var (
+	NintendoSwitchOnline = Client{ID: "71b963c1b7b6d119"}
+	NintendoMusic        = Client{ID: "a9b03ca3519e14f4"}
+)
+
+func GenerateLoginUrl(client Client) (string, string, error) {
 	verifier, challenge, err := utils.GeneratePKCE()
 	if err != nil {
 		return "", "", err
@@ -16,8 +31,8 @@ func GenerateLoginUrl() (string, string, error) {
 
 	params := NsoLoginOptions{
 		State:                           utils.GenerateRandomString(50),
-		RedirectURI:                     "npf71b963c1b7b6d119://auth",
-		ClientID:                        "71b963c1b7b6d119",
+		RedirectURI:                     fmt.Sprintf("npf%s://auth", client.ID),
+		ClientID:                        client.ID, // for nintendo switch online app
 		Scope:                           "openid user user.birthday user.screenName",
 		ResponseType:                    "session_token_code",
 		SessionTokenCodeChallenge:       challenge,

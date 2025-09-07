@@ -10,14 +10,13 @@ import (
 
 const (
 	nintendoConnectBaseUrl = "https://accounts.nintendo.com/connect/1.0.0"
-	nintendoClientId       = "71b963c1b7b6d119"
 	nintendoGrandType      = "urn:ietf:params:oauth:grant-type:jwt-bearer-session-token"
 )
 
 // GetSessionToken valid for 2 years
-func GetSessionToken(sessionTokenCode string, sessionTokenCodeVerifier string) (*SessionTokenResponse, error) {
+func GetSessionToken(sessionTokenCode string, sessionTokenCodeVerifier string, client Client) (*SessionTokenResponse, error) {
 	data := url.Values{}
-	data.Set("client_id", nintendoClientId)
+	data.Set("client_id", client.ID)
 	data.Set("session_token_code", sessionTokenCode)
 	data.Set("session_token_code_verifier", sessionTokenCodeVerifier)
 

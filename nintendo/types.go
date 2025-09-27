@@ -133,3 +133,9 @@ type ShowSelfResponse struct {
 	} `json:"result"`
 	CorrelationId string `json:"correlationId"`
 }
+
+type FParam struct {
+	F         string `json:"f"`
+	Timestamp int64  `json:"timestamp"`
+	RequestId string `json:"request_id"`
+}

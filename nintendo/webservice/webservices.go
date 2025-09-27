@@ -5,30 +5,22 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/einsjustinn/nintendo-api/nxapi"
 )
 
 const (
 	nintendoBaseUrl = "https://api-lp1.znc.srv.nintendo.net"
 )
 
-func GetWebServices(webApi string) (ListWebServicesResponse, error) {
-
-	config, err := nxapi.GetConfig()
-	if err != nil {
-		return ListWebServicesResponse{}, fmt.Errorf("failed to get config: %w", err)
-	}
-	configVersion := config.Versions[0]
+func GetWebServices(webToken string, version string) (ListWebServicesResponse, error) {
 
 	request, err := http.NewRequest("POST", nintendoBaseUrl+"/v1/Game/ListWebServices", nil)
 	if err != nil {
 		return ListWebServicesResponse{}, fmt.Errorf("failed to create request: %w", err)
 	}
-	request.Header.Set("X-Platform", configVersion.Platform)
-	request.Header.Set("X-ProductVersion", configVersion.Version)
+	request.Header.Set("X-Platform", version)
+	request.Header.Set("X-ProductVersion", version)
 	request.Header.Set("Content-Type", "application/json; charset=utf-8")
-	request.Header.Set("Authorization", "Bearer "+webApi)
+	request.Header.Set("Authorization", "Bearer "+webToken)
 	client := &http.Client{}
 	response, err := client.Do(request)
 	if err != nil {
